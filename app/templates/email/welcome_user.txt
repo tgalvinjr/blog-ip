@@ -1,5 +1,3 @@
 Hello {{user.username}}
-Welcome to Blogger...
-A place that you can create blogs or comment on other blogs and vent while at it.
-Enjoy.
-Blogger Team.
+Welcome to PitchPerfect
+We have just seen you have signed up for our application and want to welcome you to the family. Please enjoy by adding your pitches and commenting.

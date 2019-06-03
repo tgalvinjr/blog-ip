@@ -1,6 +1,6 @@
 MIT License
 
-Copyright &copy;[2019] [Okoth Pius]
+Copyright (c) [2019] [Alvin Michoma]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

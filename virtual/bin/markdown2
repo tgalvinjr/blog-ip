@@ -1,4 +1,4 @@
-#!/home/alvin/blogop/Blog/virtual/bin/python3
+#!/home/alvin/Desktop/SOS/Blog/virtual/bin/python3
 
 import sys
 from os.path import join, dirname, exists

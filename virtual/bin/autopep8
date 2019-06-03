@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/alvin/Desktop/Moringa_Projects/Independent Projects/blog-ip/virtual/bin/python3.6" "$0" "$@"
-' '''
+#!/home/alvin/Desktop/SOS/Blog/virtual/bin/python3.6
 # -*- coding: utf-8 -*-
 import re
 import sys
