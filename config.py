@@ -10,19 +10,24 @@ class Config:
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
-    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    MAIL_USERNAME = os.environ.get("EMAIL_USERNAME")
+    MAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+# simple mde  configurations
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
+
 
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
-class ProdConfig(Config):
-    """Production configuration class that inherits from the main configurations class"""
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://alvin:alvin123@localhost/blog'
+
+class TestConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://alvin:alvin123@localhost/blog_test'
 
 
 class DevConfig(Config):
-    """Configuration class for development stage of the app"""
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://alvin:alvin123@localhost/blog'
     DEBUG = True
 
 
@@ -30,11 +35,3 @@ config_options = {
     'development': DevConfig,
     'production': ProdConfig
 }
-export SECRET_KEY='SECRET_KEY'
-
-export EMAIL_USERNAME='alvinmichoma@gmail.com'
-export EMAIL_PASSWORD='itisfinallyhere'
-export FLASK_DEBUG=1
-export FLASK_APP=app
-
-python3.6 manage.py server
