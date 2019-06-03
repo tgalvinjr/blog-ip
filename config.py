@@ -30,3 +30,11 @@ config_options = {
     'development': DevConfig,
     'production': ProdConfig
 }
+export SECRET_KEY='SECRET_KEY'
+
+export EMAIL_USERNAME='alvinmichoma@gmail.com'
+export EMAIL_PASSWORD='itisfinallyhere'
+export FLASK_DEBUG=1
+export FLASK_APP=app
+
+python3.6 manage.py server
