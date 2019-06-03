@@ -1,0 +1,5 @@
+Hello {{user.username}}
+Welcome to our Blog Site. We are very glad that you have joined our family of bloggers. We offer you a platform to create your blogs, view aand comment on other blogs and get to know other bloggers. Enjoy
+
+Alvin
+Blog Team
