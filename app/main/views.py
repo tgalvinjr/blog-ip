@@ -1,6 +1,7 @@
-from flask import render_template, request, redirect, url_for,abort
+from flask import render_template, request, redirect, url_for, abort
 from . import main
 from .. import db
+
 
 @main.route('/')
 def index():
@@ -11,10 +12,29 @@ def index():
     form = PostForm()
 
     if form.validate_on_submit():
-        post = Post(body=form.body.data, author=current_user._get_current_object())
+        post = Post(body=form.body.data,
+                    author=current_user._get_current_object())
         post.save_post()
         return redirect(url_for('.index'))
 
     posts = Post.query.order_by(Post.timestamp.desc()).all()
 
     return render_template('index.html', form=form, posts=posts)
+
+
+@main.route('/user/<username>')
+@login_required
+def user(username):
+    """View function that returns the homepage for a particular user when they sign in"""
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        abort(404)
+
+    posts = user.posts.order_by(Post.timestamp.desc()).all()
+    return render_template('user.html', user=user, posts=posts)
+
+
+@main.route('/post/<int:id>')
+def post(id):
+    post = Post.query.get_or_404(id)
+    return render_template('posts.html', posts=[post])
